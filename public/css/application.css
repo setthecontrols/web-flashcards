@@ -7,3 +7,10 @@
 th {
   text-align: left;
 }
+
+.btn {
+	display: block;
+	background-color: red;
+
+
+}
