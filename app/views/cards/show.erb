@@ -1,0 +1,22 @@
+
+
+<main class='container'>
+
+	<h1>User Score: 0</h1>
+
+	<h1><%="Card ID: #{@card.id}"%></h1>
+
+	<h1><%="Question: #{@card.question}"%></h1>
+
+	<input type="text" name="answer" placeholder="answer">
+
+
+
+
+	<form action=<%="/decks/#{@card.deck_id}/cards/#{@card.id+1}"%> method="get">
+            <input type="submit" value= "Submit" class="button">
+     </form>
+
+	
+
+</main>

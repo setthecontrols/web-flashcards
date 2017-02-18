@@ -1,2 +1,20 @@
-<h1>DECKS OVERVIEW</h1>
+<main class='container'>
+	<h2>Flash Cards</h2>
 
+	<br>
+	<strong>Decks:</strong>
+	<div>
+		<% @decks.each do |deck| %>
+			<li><a href=<%="/decks/#{deck.id}"%>><%="#{deck.title}"%></a></li>	
+		<%end%>
+	</div>
+
+
+	<br>
+	<strong>Navigation:</strong>
+	<nav>
+		<div>
+			<li><a href='/'>Home</a></li>
+		</div>
+	</nav>
+</main>
