@@ -1,20 +1,40 @@
 <main class='container'>
 
-	<h1>User Score: 0</h1>
+	<h3>Flashcards</h3>
 
-	<h1><%="Card ID: #{@card.id}"%></h1>
+	<%if @previous_card != nil%>
+		<strong>Previous Question:</strong>
+		<div><%="Question: #{@previous_card.question}"%></div>
+		<div><%="Answer: #{@previous_card.answer} / User: #{@previous_user_answer} (#{Guess.last.selection})"%></div>
+		<br>
+	<%end%>
 
-	<h1><%="Question: #{@card.question}"%></h1>
-
-	<input type="text" name="answer" placeholder="answer">
 
 
 
+	<strong>Score:</strong>
+	<div><%="Correct: #{@correct_count}"%></div>
+	<div><%="Incorrect: #{@wrong_count}"%></div>
+	<br>
+	
 
-	<form action=<%="/decks/#{@card.deck_id}/cards/#{@card.id+1}"%> method="get">
+	<strong><%="#{@round.deck.title} / Card ID: #{@card.id}"%></strong>
+	<div><%="Question: #{@card.question}"%></div>
+	<br>
+
+	<%if @card.id == @round.deck.cards.last.id%>
+		<form action=<%="/rounds/#{@round.id}/cards/last"%> method="get">
+			<input type="text" name="answer" placeholder="Answer.." id="user_input">
+            <input type="submit" value= "Submit" class="button">
+     	</form>
+	<%else%>
+		<form action=<%="/rounds/#{@round.id}/cards/#{@card.id+1}"%> method="get">
+			<input type="text" name="answer" placeholder="Answer.." id="user_input">
             <input type="submit" value= "Submit" class="button">
      </form>
+	<%end%>
 
-	
+     
+
 
 </main>
