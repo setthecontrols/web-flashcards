@@ -11,6 +11,8 @@ require 'rubygems'
 require 'uri'
 require 'pathname'
 
+require 'bcrypt'
+
 require 'pg'
 require 'active_record'
 require 'logger'
@@ -25,6 +27,8 @@ Hirb.enable({:width => 155, :height => 500})
 
 require 'faker'
 # Some helper constants for path-centric logic
+enable :sessions
+
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
 APP_NAME = APP_ROOT.basename.to_s
