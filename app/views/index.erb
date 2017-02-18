@@ -1,0 +1,26 @@
+<main class='container'>
+	<h2>Craigslist Jr.</h2>
+
+	<br>
+	<strong>Decks:</strong>
+	<div>
+		<% @decks.each do |category| %>
+			<li><a href=<%="/categories/#{category.id}"%>><%="#{category.title}"%></a></li>	
+		<%end%>
+	</div>
+
+	<br>
+	<strong>Actions:</strong>
+		<div>
+			<li><a href='/categories/new'>Add Category</a></li>
+		</div>
+
+
+	<br>
+	<strong>Navigation:</strong>
+	<nav>
+		<div>
+			<li><a href='/'>Home</a></li>
+		</div>
+	</nav>
+</main>
