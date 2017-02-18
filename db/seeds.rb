@@ -1,6 +1,8 @@
 random_deck = Deck.create({title: "Random Facts"})
 
 Card.create(question: "what's good?", answer: "good", deck_id: 1)
+Card.create(question: "what's bad?", answer: "bad", deck_id: 1)
+Card.create(question: "what's up?", answer: "up", deck_id: 1)
 
 
 

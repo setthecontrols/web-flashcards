@@ -1,0 +1,32 @@
+
+<main class='container'>
+	<h1><%="Deck: #{@deck.title}"%></h1>
+
+	<strong><%="Total Questions: #{@deck.cards.length}"%></strong>
+	<br>
+	<br>
+	<div>
+		<% @deck.cards.each do |card| %>
+			<%="#{card.id}. #{card.question}"%>
+			<br>
+			<br>
+		<%end%>
+	</div>
+
+	<br>
+	<strong>Actions:</strong>
+	<nav>
+		<div>
+			<li><a href=<%="/decks/#{@deck.id}/cards/1"%>>Begin</a></li>
+		</div>
+	</nav>
+
+	<br>
+	<strong>Navigation:</strong>
+	<nav>
+		<div>
+			<li><a href='/'>Home</a></li>
+		</div>
+	</nav>
+
+</main>
