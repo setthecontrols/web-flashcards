@@ -1,21 +1,19 @@
 <main class='container'>
 	<h2>Flashcards</h2>
 
-	<br>
+
 	<strong>Decks:</strong>
 	<div>
 		<% @decks.each do |deck| %>
-			<li><a href=<%="/users/#{@user.id}/decks/#{deck.id}"%>><%="#{deck.title}"%></a></li>	
+			<li><a href=<%="/users/#{@user.id}/decks/#{deck.id}"%>><%="#{deck.title} (#{deck.cards.length} Cards)"%></a></li>	
 		<%end%>
 	</div>
 
 	<br>
-	<br>
-	<strong>Navigation:</strong>
-	<nav>
+
 		<div>
-			<li><a href='/'>Home</a></li>
+			<form action="/" method="get">
+	            <input type="submit" value= "Sign Out" class="button">
+	     	</form>
 		</div>
-	</nav>
-	<br>
 </main>
