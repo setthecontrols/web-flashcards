@@ -1,0 +1,19 @@
+<main class='container'>
+
+	<h2><%="#{@round.deck.title}"%></h2>
+
+	<strong>Previous Question:</strong>
+	<div><%="Question: #{@round.deck.cards.last.question}"%></div>
+	<div><%="Answer: #{@round.deck.cards.last.answer} / User: #{@previous_user_answer} (#{Guess.last.selection})"%></div>
+	<br>
+	
+	<strong>Round Statistics:</strong>
+	<div><%="Correct: #{@correct_count}"%></div>
+	<div><%="Incorrect: #{@wrong_count}"%></div>
+	<br>
+
+	<form action=<%="/users/#{@round.user_id}/decks"%> method="get">
+        <input type="submit" value= "Return to Menu" class="button">
+ 	</form>
+	
+</main>

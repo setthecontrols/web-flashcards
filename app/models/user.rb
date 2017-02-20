@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   validates :user_name, uniqueness: true
+  has_many :rounds
 
   include BCrypt
 

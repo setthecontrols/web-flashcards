@@ -14,5 +14,4 @@ post '/users' do
   p @user
   login(@user)
   redirect '/users'
-
 end
